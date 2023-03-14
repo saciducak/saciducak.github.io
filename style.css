@@ -6,9 +6,11 @@
 .banner{
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,8),rgba(0,0,0,8)), url(homeOffice.jpg);
+    background-image: url(homeOffice.jpg);
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;         /* anasayfama tam oturmasını sağlıyor*/
+
 }
 .navbar{
     display: flex;
@@ -19,10 +21,23 @@
     justify-content: space-between;
 }
 .logo{
-    cursor: pointer;
+    width: 80;
+    height: 60;
     border-radius: 80%;
 }
 .navbar ul li{
     list-style-type: none;
     display: inline-block;     /* li'lerin yan yana sıralanmasını sağlayacak */
+    margin: 0 20px;            /* navbardaki linkleri birbirinden birazcık uzaklaştırdık.*/
+}
+.navbar ul li a{
+    text-decoration: none;
+    color : #fff;
+}
+.onyuz{
+    width: 89%;
+    position: absolute;       /* sayfanın kenarlarına göre konumunu ayarlasın istiyorsan absolute ayarı gerekli */
+    top: 30%;
+    color: white;
+    text-align: center;       /* sağdan soldan da yazıyı ortaladık */
 }
