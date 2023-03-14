@@ -4,8 +4,8 @@
     font-family: sans-serif;
 }
 .banner{
-    height: 100vh;
-    width: 100%;
+    height: 110vh;
+    width: 97%;
     background-image: url(homeOffice.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -26,6 +26,7 @@
     border-radius: 80%;
 }
 .navbar ul li{
+    width: 50px;
     list-style-type: none;
     display: inline-block;     /* li'lerin yan yana sıralanmasını sağlayacak */
     margin: 0 20px;            /* navbardaki linkleri birbirinden birazcık uzaklaştırdık.*/
@@ -34,10 +35,30 @@
     text-decoration: none;
     color : #fff;
 }
+.navbar ul li a:hover{         /* üzerine geldiğimiz href'in siyah rengine hafif yumuşak bir geçiş yapmasını sağlar :) */
+    color : black;
+    transition: 1s;
+}
 .onyuz{
     width: 89%;
     position: absolute;       /* sayfanın kenarlarına göre konumunu ayarlasın istiyorsan absolute ayarı gerekli */
     top: 30%;
     color: white;
     text-align: center;       /* sağdan soldan da yazıyı ortaladık */
+}
+.onyuz h1{
+    font-size: 28px;
+}
+.onyuz p{
+    font-size: 12px;
+}
+.banner .navbar{
+    width: 100%;
+    height: 55px;
+}
+.logo{
+    width : 130px;
+    height : 120px;
+    background-position: center center;
+    object-fit: cover;
 }
