@@ -6,7 +6,7 @@
 .banner{
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(black,white), url(homeOffice.jpg);
+    background-image: linear-gradient(rgba(0,0,0,8),rgba(0,0,0,8)), url(homeOffice.jpg);
     background-position: center;
     background-size: cover;         /* anasayfama tam oturmasını sağlıyor*/
 }
@@ -17,4 +17,12 @@
     padding: 32px 0;      /* alttan ve üstten 32pixsel üstten 0 pixel */
     align-items: center;
     justify-content: space-between;
+}
+.logo{
+    cursor: pointer;
+    border-radius: 80%;
+}
+.navbar ul li{
+    list-style-type: none;
+    display: inline-block;     /* li'lerin yan yana sıralanmasını sağlayacak */
 }
