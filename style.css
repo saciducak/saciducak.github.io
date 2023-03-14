@@ -1,0 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+.banner{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(black,white), url(homeOffice.jpg);
+    background-position: center;
+    background-size: cover;         /* anasayfama tam oturmasını sağlıyor*/
+}
+.navbar{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    padding: 32px 0;      /* alttan ve üstten 32pixsel üstten 0 pixel */
+    align-items: center;
+    justify-content: space-between;
+}
