@@ -1,70 +1,102 @@
 *{
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
+    box-sizing : border-box;
 }
-.banner{
-    height: 110vh;
-    width: 97%;
-    background-image: url(homeOffice.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;         /* anasayfama tam oturmasını sağlıyor*/
 
+.html{
+    font-size: 62.5%;
 }
-.navbar{
+
+.body,h1,h2,ul{
+    margin: 0;
+    padding: 0;
+}
+.ul{
+    list-style: none;
+}
+.arkaplan {
+    background-color: #25373D;
+}
+.taraf{
+    width: 960px;
+    margin: 0 auto;
+}
+.ust{
     display: flex;
-    width: 90%;
-    margin: auto;
-    padding: 32px 0;                /* alttan ve üstten 32pixsel üstten 0 pixel */
+    justify-content: space-between;
     align-items: center;
+    min-height: 200px;
+}
+.logo{
+    letter-spacing: .3rem;
+    color : wheat;
+     
+}
+.orta .sahil{
+    margin-top:20px;
+    border:10px solid #25373D;
+    padding:20px;
+}
+
+.orta .sahil img{
+    display: block;
+    width: 100%;
+}
+.orta .ortafoto{
+    margin-top:20px;
+    display: flex;
     justify-content: space-between;
 }
-.logo{
-    width: 80;
-    height: 60;
-    border-radius: 80%;
+.ust .hrefler ul{
+    display: flex;
 }
-.navbar ul li{
-    width: 50px;
-    list-style-type: none;
-    display: inline-block;          /* li'lerin yan yana sıralanmasını sağlayacak */
-    margin: 0 20px;                 /* navbardaki linkleri birbirinden birazcık uzaklaştırdık.*/
+.ust .hrefler ul li{
+    margin:0 1rem;
 }
-.navbar ul li a{
+
+.ust .hrefler ul a{
+    color:wheat;
     text-decoration: none;
-    color : #fff;
+    font-size:1.2rem;
+    padding:0 2rem;
+    text-decoration: none;
+    list-style-type: none;
 }
-.navbar ul li a:hover{              /* üzerine geldiğimiz href'in siyah rengine hafif yumuşak bir geçiş yapmasını sağlar :) */
-    color : black;
-    transition: 1s;
+.ust .hrefler ul a:hover{
+    color: black;
+    transition: 1s;           /* üzerine geldiğimiz href'in siyah rengine hafif yumuşak bir geçiş yapmasını */
 }
-.onyuz{
-    width: 89%;
-    position: absolute;             /* sayfanın kenarlarına göre konumunu ayarlasın istiyorsan absolute ayarı gerekli */
-    top: 30%;
-    color: white;
-    text-align: center;             /* sağdan soldan da yazıyı ortaladık */
+
+.alt{
+    margin-top:20px;
+    padding:20px 0;
+    display: flex;
+    gap:20px;
+    background-color: wheat;
 }
-.onyuz p{
-    font-size: 13px;
+.alt .baglanti{
+    flex-grow: 1;
 }
-.banner .navbar{
-    width: 100%;
-    height: 55px;
+
+.alt .baglanti ul li{
+    border-bottom:dotted 1px #FCB941;
+    text-decoration: none;
+    list-style-type: none;
+    margin:5px 0;
 }
-.logo{
-    width : 125px;
-    height : 120px;
-    background-position: center center;
-    object-fit: cover;              /*  to fully fit the photo/logo */
+
+.alt .baglanti a{
+    font-size:1.6rem;
+    text-decoration: none;
+    list-style-type: none;
+    color:#FCB941;
 }
-.navbar h1{
-    width: 100px;
-    border-radius: 50px;
-    float: left;
-    margin-right: 10px;
+
+
+.cizgi{
+    border-top:dotted 1px #FCB941;
+    margin:20px 0;
 }
-.banner h3{
-    color: wheat;                  /* I select h3 for name because h1 or h2 are too big. */
+
+.alt-kenar-10{
+    border-bottom:10px solid #FCB941;
 }
