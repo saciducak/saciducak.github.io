@@ -35,6 +35,19 @@ body{
     height: 200vh;                            /* aşağı yönlü scroll için */
 }
 
+html::-webkit-scrollbar{
+    width: 0.8rem;
+    background-color: white;
+    
+}
+html::-webkit-scrollbar-thumb { 
+    background-color: var(--main-color);
+    border-radius: 3rem;   
+}
+html::-webkit-scrollbar-track{
+    background-color: black;
+}
+
 .header .logo img{
     height : 6.5rem;
     border-radius: 50%;                       /* logo büyüklüğü ayarlandı ve Circle hale getirildi border-radius ile*/
@@ -82,7 +95,7 @@ body{
     display: flex;
     align-items: center;
 }
-.home .content{l
+.home .content{
     max-width: 60rem;
 }
 .home .content h3{
@@ -170,7 +183,7 @@ section{
     display: flex;
     align-items: center;
 }
-.home .content{l
+.home .content{
     max-width: 60rem;
 }
 .home .content h3{
@@ -197,7 +210,79 @@ section{
     color: #fff;
 
 }
+
+.butonum:hover {
+    opacity: 0.75; 
+}
 .heading span{
     color:  rgb(85, 10, 183);
     text-transform: uppercase;
+}
+
+
+.about .introduction {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;                /* flex'in bir özelliği, foto ve information kısmı arası 20pixel boşluk bırakmaya yarar*/
+} 
+.about .introduction .photo {
+    flex: 1 1 45rem;
+} 
+.about .introduction img {
+    width: 100%;
+}
+
+.about .introduction .information {
+    flex: 1 1 45rem;
+} 
+.about .introduction .information h3{
+    font-size: 2.6rem;
+    color: white;
+} 
+.about .introduction .information p{
+    font-size: 1.6rem;
+    color: white;
+    padding: 1rem 0;
+    line-height: 1.8;
+} 
+.contact .contactme{
+    display: center;
+    background-color: var(--black-color);
+    flex-wrap: wrap;
+}
+.contact .contactme form{
+    width: 100%;
+    padding: 5rem 2rem;
+    object-fit: cover;
+    text-align: center;
+}
+.contact .contactme form h3{
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: white;
+}
+.contact .contactme form .inputBox{
+    display: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: var(--black-color);
+}
+.contact .contactme form .inputBox i{
+    color: white;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+.contact .contactme form .inputBox input{
+    color: white;
+    width: 70%;
+    padding: 1.5rem;
+    text-transform: none;
+    font-size: 1rem;
+    background-color: rgb(38, 38, 38);
+}
+.contact .contactme form .butonum{
+    color: var(--main-color);
+    background-color: aquamarine;
+    font-weight: bold;
 }
