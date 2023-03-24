@@ -26,9 +26,73 @@
 html{
     /* ekrandaki genel yapı daha uzaklaştı , pixelleri kücülttüm her component için */
     font-size: 62.5%;               /* Base 1rem=16px;  bir rem'i 10 pixel yapmak için 62.5%*/
-    overflow-x: hidden;             /* Alt taraftaki scroll'u kapattık*/
+    overflow-x: hidden;             /* Alt taraftaki scroll'u kapattık */
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+}
+body{
+    background-color: var(--main-color);      /* aksi belirtilmediği sürece default main color olacak */
+    height: 200vh;                            /* aşağı yönlü scroll için */
 }
 
-.logo img{
-    height : 7rem;
+.header .logo img{
+    height : 6.5rem;
+    border-radius: 50%;                       /* logo büyüklüğü ayarlandı ve Circle hale getirildi border-radius ile*/
+}
+
+.header{
+    background-color: white;                /* var()  renginden farklı bir renk tanımladık */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7%;                            /* sağdan soldan biraz uzaklaştırdık */                
+    margin: 2rem 7%; 
+    border-radius: 30rem;
+    box-shadow: 0px 0px 17px -2px rgba(0,0,0,0.90) ;                    /* gölge efekti */
+    position: sticky;                         /* üstteki navbar sürekli hareket etmesi için*/
+    top: 0;
+    z-index: 1000;                            /* üstünü herhangi bir component kapatmasın */
+}
+
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    color: var(--black-color);
+    border-bottom: 0.1rem solid transparent;
+}
+
+.header .navbar a:hover{
+    border-color: var(--main-color);
+    padding-bottom: 0.2rem;
+}
+
+.header .buttons button{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-left: 2rem;
+    background-color: transparent;
+}
+
+.home{
+    min-height: 100vh;
+    background: url(../photos/keyboard.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -13.5rem;
+    display: flex;
+    align-items: center;
+}
+.home .content{l
+    max-width: 60rem;
+}
+.home .content h3{
+    font-size: 5rem;
+    color: white;
+}
+.home .content p{
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.8; 
+    padding: 1rem 0;
+    color: #ccc;
 }
