@@ -96,3 +96,28 @@ body{
     padding: 1rem 0;
     color: #ccc;
 }
+
+section{
+    padding: 4rem 8%;
+} 
+
+.butonum{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    border-radius: 30rem;
+    color: #fff;
+    font-size: 2rem;
+    background-color: rgb(85, 10, 183);
+    cursor: pointer;
+}
+
+.projeler .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem, 1fr));
+    gap: 1.5rem;
+} 
+.projeler .grid-container .grid .grid-foto img{
+    width: 100%;
+    object-fit: cover;
+}
