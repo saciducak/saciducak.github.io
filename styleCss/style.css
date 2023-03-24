@@ -1,0 +1,34 @@
+/* Google Font'tan çektiğimiz poppins font tipi sayfamıza eklenecek - import ettik */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+/* RESET CSS YAZIMI */
+*{
+    margin: 0;                      /* koşeleri sıfırlıyorum */
+    padding: 0;
+    box-sizing: border-box;         /* kutularımı belli bir kalıba sokma işlemi*/
+    outline: none;                  
+    border: none;                   /* köşeleri silmek için */
+    text-decoration: none;          /* aşağıdaki satır ile metin arası çizer */
+    text-transform: capitalize;     /* capitalize,uppercase,lowecase vs türleri vardır: capitalize: bas harfler büyük */
+    letter-spacing: normal;         /* karakterlerin mesafesi */
+    transition: 0.2s ease;          /* hızlı bir geçiş değil de daha yumuşak bir geçiş (0.2saniye) */
+    font-family: 'Poppins', sans-serif;
+}
+/* Başlangıç olarak birden çok css düzenlemesi yapıp hızlı kod yazmış olacağım...*/
+
+:root{
+    --main-color: rgb(9, 147, 101);
+    --black-color: #121212;
+    --border: 0.1rem solid rgba(255,255,255,0.4);
+}
+
+/* temel Html CSS'i : en baştaki o temel html sayfasına başlıca özellikler ekliyoruz*/
+html{
+    /* ekrandaki genel yapı daha uzaklaştı , pixelleri kücülttüm her component için */
+    font-size: 62.5%;               /* Base 1rem=16px;  bir rem'i 10 pixel yapmak için 62.5%*/
+    overflow-x: hidden;             /* Alt taraftaki scroll'u kapattık*/
+}
+
+.logo img{
+    height : 7rem;
+}
