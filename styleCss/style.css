@@ -230,6 +230,7 @@ section{
 } 
 .about .introduction img {
     width: 100%;
+    border-radius: 3rem;
 }
 
 .about .introduction .information {
@@ -249,6 +250,7 @@ section{
     display: center;
     background-color: var(--black-color);
     flex-wrap: wrap;
+    border-radius: 2.5rem;
 }
 .contact .contactme form{
     width: 100%;
@@ -267,6 +269,7 @@ section{
     margin-top: 2rem;
     margin-bottom: 2rem;
     border: var(--black-color);
+    border-radius: 2.5rem;
 }
 .contact .contactme form .inputBox i{
     color: white;
@@ -280,9 +283,114 @@ section{
     text-transform: none;
     font-size: 1rem;
     background-color: rgb(38, 38, 38);
+    border-radius: 2rem;
 }
 .contact .contactme form .butonum{
     color: var(--main-color);
     background-color: aquamarine;
     font-weight: bold;
 }
+
+.pages .mypages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem, 1fr));
+    gap: 1.5rem;
+} 
+.pages .mypages .startpages{
+    background-color: white;
+    border-radius: 3rem;
+}
+.pages .mypages .startpages .image{
+   height: 25rem;
+   overflow: hidden;
+   width: 100%;
+   border-top-right-radius: 3rem;            /*  sağ üst ve sol üst kısmı da hafif yumuşakça ovalleştirdik.*/
+   border-top-left-radius: 3rem;             /* Ovalleştirme işlemi için...*/
+}
+.pages .mypages .startpages .image img{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+.pages .mypages .startpages:hover .image img{
+    transform: scale(1.15);
+}
+.pages .mypages .startpages .content{
+    padding: 2rem;
+}
+.pages .mypages .startpages .content .title{
+    font-size: 1.8rem;
+    line-height: 1.5rem;
+}
+.pages .mypages .startpages .content span{
+    display: block;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+}
+
+.footer{
+    background-color: var(--black-color);
+    padding: 4rem;
+    text-align: center;
+}
+.footer .search{
+    display: flex;
+    justify-content: center;
+}
+.footer .search .search-input{
+    height: auto;
+    width: 30rem;   
+    border-radius: 2rem;
+}
+.search-input{
+    font-size: 1.6rem;
+    color: var(--black-color);
+    padding: 1rem;
+    text-transform: none;
+    border-radius: 3rem;
+}
+.footer .search .btn-primary{
+    background-color: var(--main-color);
+    padding:  1rem 2rem;
+    margin-left: 1rem;
+    border-radius: 2rem;
+}
+.footer .share{
+    padding: 2rem 0;
+
+}
+.footer .share a{
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+    color: white;
+    font-size: 2.5rem;
+    border: var(--border);
+    border-radius: 50%;             /* tatlı yuvarlak oval şekli alması için */
+    margin: 0.5rem;
+    
+}
+
+.footer .share a:hover{
+   background-color: var(--main-color);
+    
+}
+
+.footer .credit{
+    font-size: 1.2rem;
+    color: var(--main-color);
+    font-weight: 300;
+    padding-top: 1.5rem;
+}
+
+
+
+
+/* 
+   CSS kodunda her adım tek tek açıklanmaya çalışılmıştır
+   Bu tasarım yapılırken  birçok Medium,W3Schools sayfasından araştırma yapılmıştır.
+   CodingWithMosh , BilgisayarGenetiği sayflarından örnek kodlar alınmıştır
+   Arkaplan resmi PİXABAY.COM dan alınmıştır 
+   İG,Facebook,Mail vb ikonlar CODEPEN ICON'dan alınmıştır.  
+   Codepen Icon'dan CDN çekilmiştir.  Üst kısımda İmport bilgileri görülebilir...
+*/
