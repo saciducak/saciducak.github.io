@@ -117,7 +117,87 @@ section{
     grid-template-columns: repeat(auto-fit,minmax(30rem, 1fr));
     gap: 1.5rem;
 } 
+
+.projeler .grid-container .grid {
+    padding: 3rem;
+    background-color: white;
+    border-radius: 3rem;
+    background-color: white;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
 .projeler .grid-container .grid .grid-foto img{
     width: 100%;
     object-fit: cover;
+}
+.projeler .grid-container .grid .grid-foto grid-fotom{
+   font-size: 1.4rem;
+}
+.projeler .grid-container .grid .grid-foto h1{
+    font-size: 1.8rem;
+    padding: 1rem 0;
+}
+.heading{
+    color:white;
+    text-transform: uppercase; 
+    font-size: 4rem;
+    margin-bottom: 3.5rem;
+    border-bottom: 0.1rem solid #fff;
+}
+
+.header .navbar a:hover{
+    border-color: var(--main-color);
+    padding-bottom: 0.2rem;
+}
+
+.header .buttons button{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-left: 2rem;
+    background-color: transparent;
+}
+
+.home{
+    min-height: 100vh;
+    background: url(../photos/keyboard.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -13.5rem;
+    display: flex;
+    align-items: center;
+}
+.home .content{l
+    max-width: 60rem;
+}
+.home .content h3{
+    font-size: 5rem;
+    color: white;
+}
+.home .content p{
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.8; 
+    padding: 1rem 0;
+    color: #ccc;
+}
+
+section{
+    padding: 4rem 8%;
+}
+
+.butonum{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 2rem 4rem;
+    border-radius: 30rem;
+    color: #fff;
+
+}
+.heading span{
+    color:  rgb(85, 10, 183);
+    text-transform: uppercase;
 }
