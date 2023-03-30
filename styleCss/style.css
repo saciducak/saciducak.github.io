@@ -400,13 +400,15 @@ section{
         left: 0;
         background-color: white;
         width: 100%;
+        overflow: hidden;
+        transition: max-height .5s;
     }
     .header .buttons .menu-icon{
-        margin-right: 50px;
+        margin-right: 50px; 
         margin-top: 5px;
         margin-bottom: 5px;
         display: block;
-        cursor: pointer;
+        cursor: pointer;                /* üzerine geldiğimzde bir fare çıkması icin */
     }
 }
 

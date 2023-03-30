@@ -36,7 +36,7 @@
             <a href="https://www.instagram.com/saciducak/">Social Media</a>
             <a href="mailto:saciducak1@gmail.com">Contact</a>                   <!-- kullanıcının mail programı her ne ise onu açarak mail yollar -->
         </nav>
-        <div class="buttons">
+        <div class="buttons" id="menuItems">
             <button>
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
@@ -218,7 +218,20 @@
         </div>
     </footer>
     
-    <script src="index.js"></script>
+    <script>
+        var menuItems=document.getElementById("menuUtems");
+        menuItems.style.maxHeight= "0px";
+        
+        function menuIcon(){
+            if(menuItems.style.maxHeight=="0px"){
+                menuItems.style.maxHeight=="200px";
+            }
+            else{
+                menuItems.style.maxHeight=="0px";
+            } 
+        }
+       
+    </script>
 </body>
 </html>
 
