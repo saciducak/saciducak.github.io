@@ -383,25 +383,60 @@ section{
     padding-top: 1.5rem;
 }
 
-.menu-icon {
-    font-size: 25px;
+.header .search-form{
+    position: absolute;
+    top: 115%;
+    background-color: #fff;
+    right: 2%;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 25px 2px rgba(1, 0, 2, 0.9);
+    border-radius: 3rem;                    
+    transform: scaleY(0);
+}
+.header .search-form.active {
+    transform: scaleY(1);
+}
+.header .search-form i{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;           
+}
+.header .search-form input{
+    width: 100%;              
+}
+
+
+#menu-icon {
+    display: none;
 }
 
 /* Responsive yapı için */
 /* Sayfa boyutu bozulduğunda header'ımız karışıyor ve bozuluyordu...  */
-@media only screen and (max-width:800px) {
+@media (max-width:991px) {
+    html{
+        font-size: 55%;
+    };
     .header{
+        padding: 1.5rem 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         position: absolute;
-        top: 100px;
         left: 0;
-        background-color: white;
+        background-color: white; 
         width: 100%;
         overflow: hidden;
         transition: max-height .5s;
+    }
+    .header .logo img{
+        height: 7rem;
+    }
+    section {
+        padding: 2rem;
     }
     .header .buttons .menu-icon{
         margin-right: 50px; 
@@ -411,6 +446,31 @@ section{
         cursor: pointer;                /* üzerine geldiğimzde bir fare çıkması icin */
     }
 }
+@media (max-width:760px) {
+   #menu-icon{
+    display: inline-block;
+   }
+   .header .navbar{
+    position: absolute;
+    top: 95%;
+    background-color: #fff; 
+    height: calc(100vh - 50rem);
+    width: 30rem;
+    box-shadow: 0px 20px 14px 0px rgba(0,0,0,0.90);
+    right: -100%;                    
+   }
+   .header .navbar.active{
+    right: 3rem;
+    }
+   .header .navbar a{
+    color: var(--black-color);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+   }
+}
+
 
 
 /* 
