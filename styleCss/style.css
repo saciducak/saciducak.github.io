@@ -457,12 +457,13 @@ section{
     height: calc(100vh - 50rem);
     width: 30rem;
     box-shadow: 0px 20px 14px 0px rgba(0,0,0,0.90);
-    right: -100%;                    
+    right: -100%;       
+    border-radius: 2rem;             
    }
    .header .navbar.active{
     right: 3rem;
     }
-   .header .navbar a{
+   .header .navbar a{ 
     color: var(--black-color);
     display: block;
     margin: 1.5rem;
@@ -471,7 +472,15 @@ section{
    }
 }
 
+@media (max-width:550px) {
+    html{
+        font-size: 50%;
+    }
+    #menu-icon{
+        display: inline-block;
+       }
 
+}
 
 /* 
    CSS kodunda her adım tek tek açıklanmaya çalışılmıştır

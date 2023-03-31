@@ -33,11 +33,11 @@
             <a href="https://www.linkedin.com/in/muhammed-sacid-uçak-1baa31172/details/skills/">Me</a>
             <a href="https://www.linkedin.com/in/muhammed-sacid-uçak-1baa31172/">LinkedIN</a>
             <a href="https://github.com/saciducak">Github</a>
-            <a href="https://www.instagram.com/saciducak/">Social Media</a>
+            <a href="https://www.instagram.com/saciducak/">Instagram</a>
             <a href="mailto:saciducak1@gmail.com">Contact</a>                   <!-- kullanıcının mail programı her ne ise onu açarak mail yollar -->
         </nav>
         <div class="buttons" id="menuItems">
-            <button>
+            <button id="search-button">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
             <button id="menu-icon" onclick="menuIcon()" >
@@ -223,19 +223,9 @@
         </div>
     </footer>
     
-    <script>
-        var menuItems=document.getElementById("menuUtems");
-        menuItems.style.maxHeight= "0px";
-        
-        function menuIcon(){
-            if(menuItems.style.maxHeight=="0px"){
-                menuItems.style.maxHeight=="200px";
-            }
-            else{
-                menuItems.style.maxHeight=="0px";
-            } 
-        }
+    <script src="script.js">
        
+        
     </script>
 </body>
 </html>
