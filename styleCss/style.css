@@ -498,6 +498,14 @@ section{
     background-color: #121212;
 }
 
+.darkMode {
+    align-items: center;
+}
+body.darkMode{
+    --main-color: rgb(72, 5, 87);
+    --black-color: #bcc007;
+    --border: 0.1rem solid rgba(255,255,255,0.4);
+}
 
 /* 
    CSS kodunda her adım tek tek açıklanmaya çalışılmıştır
