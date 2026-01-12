@@ -2,51 +2,6 @@
 
 Modern, sophisticated portfolio website with interactive elements and smooth animations.
 
-## ✨ Features
-
-- **Rotating Typewriter** — Dynamic phrases in hero section
-- **Cursor Follower** — Subtle interactive cursor on desktop
-- **Scroll Progress** — Top progress indicator
-- **Expandable Project Cards** — Click to reveal details
-- **Interactive Timeline** — Hover states on experience
-- **Smooth Animations** — Intersection Observer reveals
-
-## 🚀 Quick Start
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-```
-
-## 📦 Deploy to GitHub Pages
-
-### Option 1: Automatic (Recommended)
-
-Just push to `main` branch — GitHub Actions handles deployment automatically.
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/saciducak/saciducak.github.io.git
-git branch -M main
-git push -u origin main
-```
-
-Then go to **Settings → Pages → Source: GitHub Actions**
-
-### Option 2: Manual
-
-```bash
-npm run build
-npm run deploy
-```
 
 ## 🎨 Customization
 
@@ -77,4 +32,4 @@ npm run deploy
 
 ---
 
-© 2025 Sacid Uçak
+© 2026 Sacid Uçak
