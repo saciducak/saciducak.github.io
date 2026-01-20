@@ -291,15 +291,19 @@ const HeroSection = () => {
             </div>
 
             {/* Description */}
+            {/* Description */}
             <p className="text-lg text-neutral-400 max-w-xl leading-relaxed font-light mb-12">
-              As an AI Engineer, I've worked on end-to-end AI systems in computer vision and applying deep learning solutions.
-              From data preparation to deployment-ready architectures, building complete AI pipelines that turn research into real-world impact.
+              AI Engineer. Architecting intelligence.
+              <span className="block mt-2">
+                Bridging <strong className="font-medium text-neutral-200">Computer Vision</strong> & <strong className="font-medium text-neutral-200">LLMs</strong> to build production-grade systems.
+                From RAG-powered decision engines to real-time aerial surveillance pipelines.
+              </span>
             </p>
 
             {/* CTA */}
             <div className="flex flex-wrap gap-4">
               <button
-                onClick={() => scrollToSection('venture')}
+                onClick={() => scrollToSection('experience')}
                 className="hoverable group relative px-7 py-3.5 bg-neutral-100 text-neutral-900 text-sm font-medium overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
@@ -397,15 +401,15 @@ const VentureSection = () => {
             {/* Feature Cards */}
             <div className="grid sm:grid-cols-2 gap-4 mb-10">
               {[
-                { icon: '◈', title: 'StartUp Ecosystem', desc: 'Incubation Graduate' },
-                { icon: '◇', title: 'AI-First Approach', desc: 'Vision + LLM Pipeline' },
-                { icon: '○', title: 'Board Overview', desc: 'Strategy & Growth' },
-                { icon: '□', title: 'Investment Ready', desc: 'TÜBİTAK BİGG Aligned' },
+                { icon: '◈', title: 'StartUp Ecosystem', desc: 'Graduate of Top-Tier Incubation Programs' },
+                { icon: '◇', title: 'AI-First Approach', desc: 'Hybrid Computer Vision & LLM Pipelines' },
+                { icon: '○', title: 'Board Overview', desc: 'Strategic Growth & Scalable Roadmap' },
+                { icon: '□', title: 'Investment Ready', desc: 'Aligned with Global VC Standards' },
               ].map((feature) => (
                 <div key={feature.title} className="group p-4 border border-neutral-800 hover:border-neutral-700 transition-colors">
                   <span className="text-amber-400/60 text-lg">{feature.icon}</span>
                   <h4 className="text-neutral-200 font-medium mt-2">{feature.title}</h4>
-                  <p className="text-neutral-500 text-sm">{feature.desc}</p>
+                  <p className="text-neutral-500 text-sm leading-snug">{feature.desc}</p>
                 </div>
               ))}
             </div>
@@ -422,28 +426,88 @@ const VentureSection = () => {
           </div>
 
           {/* Visual */}
+          {/* Visual */}
           <div className={`lg:col-span-2 transition-all duration-1000 delay-200 ${isInView ? 'opacity-100' : 'opacity-0 translate-x-8'}`}>
-            <div className="relative aspect-[3/4] flex items-center justify-center">
-              <div className="absolute inset-8 border border-neutral-800" />
-              <div className="absolute inset-4 border border-amber-400/20" />
+            <div className="relative aspect-square flex items-center justify-center">
+              {/* Architecture Diagram: Neural-Agri Interface */}
+              {/* High-Fidelity Architecture Diagram: Neural-Agri Interface v2 */}
+              <div className="relative w-80 h-80">
+                {/* Background Grid & Depth */}
+                <div className="absolute inset-0 border border-neutral-800/30 rounded-full [mask-image:radial-gradient(transparent,black)] scale-125 animate-pulse" />
 
-              <div className="relative z-10 text-center px-8">
-                <div className="w-24 h-24 mx-auto mb-6 relative">
-                  <div className="absolute inset-0 border border-amber-400/30 animate-spin-slow" style={{ animationDuration: '20s' }} />
-                  <div className="absolute inset-2 border border-neutral-700 rotate-45" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-3xl text-amber-400/60">◊</span>
+                {/* Triangular Connectivity Mesh (SVG) */}
+                <svg className="absolute inset-0 w-full h-full text-neutral-800 pointer-events-none drop-shadow-2xl" viewBox="0 0 100 100">
+                  {/* Rotating Rings */}
+                  <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" strokeWidth="0.2" className="text-neutral-700 animate-spin-slow" style={{ animationDuration: '60s' }} />
+                  <circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" strokeWidth="0.2" strokeDasharray="2 4" className="text-neutral-600 animate-spin-slow" style={{ animationDuration: '40s', animationDirection: 'reverse' }} />
+
+                  {/* Active Data Paths */}
+                  <path d="M50 50 L20 25" stroke="url(#visualGrad)" strokeWidth="0.5" className="animate-pulse" />
+                  <path d="M50 50 L80 25" stroke="url(#visualGrad)" strokeWidth="0.5" className="animate-pulse" style={{ animationDelay: '0.5s' }} />
+                  <path d="M50 50 L50 85" stroke="url(#visualGrad)" strokeWidth="0.5" className="animate-pulse" style={{ animationDelay: '1s' }} />
+
+                  <defs>
+                    <linearGradient id="visualGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="rgba(245, 158, 11, 0)" />
+                      <stop offset="50%" stopColor="rgba(245, 158, 11, 1)" />
+                      <stop offset="100%" stopColor="rgba(245, 158, 11, 0)" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                {/* Nodes with Holographic Effect */}
+                {/* Top Left: Vision */}
+                <div className="absolute top-[20%] left-[15%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-default">
+                  <div className="relative w-12 h-12 bg-neutral-900 border border-amber-500/30 rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(245,158,11,0.1)] transition-all duration-500 group-hover:shadow-[0_0_25px_rgba(245,158,11,0.3)] group-hover:border-amber-500/60">
+                    <span className="text-[10px] text-amber-500 font-mono tracking-tighter">VIS.AI</span>
+                    <div className="absolute top-0 right-0 w-1.5 h-1.5 bg-amber-500 rounded-full animate-ping" />
                   </div>
+                  <div className="mt-2 px-2 py-0.5 bg-neutral-900/80 border border-neutral-800 rounded text-[8px] text-neutral-500 uppercase tracking-widest backdrop-blur-sm">Detection</div>
                 </div>
-                <p className="text-neutral-500 text-sm leading-relaxed max-w-xs">
-                  Transforming agriculture through intelligent systems and sustainable technology
-                </p>
-              </div>
 
-              <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-amber-400/40" />
-              <div className="absolute top-0 right-0 w-4 h-4 border-r border-t border-amber-400/40" />
-              <div className="absolute bottom-0 left-0 w-4 h-4 border-l border-b border-amber-400/40" />
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-r border-b border-amber-400/40" />
+                {/* Top Right: LLM */}
+                <div className="absolute top-[20%] right-[15%] translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-default">
+                  <div className="relative w-12 h-12 bg-neutral-900 border border-blue-500/30 rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-500 group-hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] group-hover:border-blue-500/60">
+                    <span className="text-[10px] text-blue-500 font-mono tracking-tighter">LLM.RAG</span>
+                    <div className="absolute top-0 right-0 w-1.5 h-1.5 bg-blue-500 rounded-full animate-ping" style={{ animationDelay: '0.3s' }} />
+                  </div>
+                  <div className="mt-2 px-2 py-0.5 bg-neutral-900/80 border border-neutral-800 rounded text-[8px] text-neutral-500 uppercase tracking-widest backdrop-blur-sm">Reasoning</div>
+                </div>
+
+                {/* Bottom: Legacy/Agri */}
+                <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 flex flex-col items-center group cursor-default">
+                  <div className="relative w-12 h-12 bg-neutral-900 border border-emerald-500/30 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.1)] transition-all duration-500 group-hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] group-hover:border-emerald-500/60">
+                    <span className="text-[10px] text-emerald-500 font-mono tracking-tighter">AGRI.IO</span>
+                    <div className="absolute top-0 right-0 w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping" style={{ animationDelay: '0.6s' }} />
+                  </div>
+                  <div className="mt-2 px-2 py-0.5 bg-neutral-900/80 border border-neutral-800 rounded text-[8px] text-neutral-500 uppercase tracking-widest backdrop-blur-sm">Actuators</div>
+                </div>
+
+                {/* Core Processor */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="relative w-28 h-28 bg-neutral-900 border border-neutral-700 rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
+                    {/* Inner Scanning Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-amber-500/10 to-transparent animate-spin-slow" style={{ animationDuration: '3s' }} />
+                    <div className="absolute inset-0 border-t border-amber-500/20 rounded-full animate-spin" style={{ animationDuration: '2s' }} />
+
+                    <div className="relative z-10 text-center">
+                      <div className="text-[9px] text-neutral-400 font-mono tracking-widest text-opacity-80">CORE</div>
+                      <div className="text-xs font-bold text-neutral-200 tracking-wider">SHETLAND</div>
+                      <div className="flex justify-center gap-0.5 mt-1">
+                        <div className="w-0.5 h-0.5 bg-emerald-500 rounded-full animate-pulse" />
+                        <div className="w-0.5 h-0.5 bg-emerald-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+                        <div className="w-0.5 h-0.5 bg-emerald-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
+                      </div>
+                    </div>
+                  </div>
+                  {/* Outer Rings */}
+                  <div className="absolute inset-0 -m-2 border border-neutral-800/50 rounded-full" />
+                  <div className="absolute inset-0 -m-4 border border-neutral-800/30 rounded-full" />
+                </div>
+
+                {/* Moving Data Packets */}
+                <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-amber-400 rounded-full shadow-[0_0_10px_rgba(251,191,36,1)] animate-ping" style={{ animationDuration: '2s' }} />
+              </div>
             </div>
           </div>
         </div>
@@ -650,16 +714,21 @@ const ExperienceSection = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-[10px] text-neutral-600 uppercase tracking-widest mb-2">Education</p>
-              <h3 className="text-xl text-neutral-200">B.Sc. in Computer Engineering</h3>
-              <p className="text-neutral-500">Marmara University • 09/2020 — 01/2025</p>
-              <p className="text-neutral-500 text-sm mt-1">GPA: 2.7 / 4.0</p>
+
+              <div className="mb-6">
+                <h3 className="text-xl text-neutral-200">B.Sc. in Computer Engineering</h3>
+                <p className="text-neutral-500">Marmara University • 09/2020 — 01/2025</p>
+                <p className="text-neutral-500 text-sm mt-1">GPA: 2.7 / 4.0</p>
+              </div>
+
+              <div>
+                <h4 className="text-neutral-300 font-medium">Albukhary International University</h4>
+                <p className="text-neutral-500 text-sm">IELTS Academic Program (Certificate) • 06/2017 - 08/2017</p>
+              </div>
             </div>
             <div className="md:text-right">
-              <p className="text-neutral-500 text-sm">
+              <p className="text-neutral-500 text-sm pt-6">
                 Participated in LÖSEV student club, AI, Blockchain and Debate Club.
-              </p>
-              <p className="text-neutral-600 text-xs mt-1">
-                Also: Albukhary International University (IELTS Academic Program) • 06/2017 - 08/2017
               </p>
             </div>
           </div>
@@ -688,16 +757,16 @@ const WorkSection = () => {
         'Robustness under varying image quality',
         'Reduced manual inspection effort by ~70%',
       ],
-      metrics: { mAP: '0.94', f1: '+12%', efficiency: '-70%' },
+      metrics: { mAP: '0.94', f1: '+12%', efficiency: '+70%' },
       tech: ['YOLOv9', 'Python', 'LLM', 'RAG'],
       color: 'from-emerald-500/10 to-transparent',
     },
     {
       id: 'agents',
       number: '02',
-      title: 'Document Analysis & Decision Support',
-      subtitle: 'LLM + RAG Architecture',
-      description: 'Built a RAG-based multi-agent document analysis system. Runs Llama 3.2 (3.2B) locally via Ollama, using semantic chunking and cosine similarity for retrieval.',
+      title: 'Synapse – Multi-Agent RAG Intelligence',
+      subtitle: 'LLM Architecture',
+      description: 'Built a RAG-based multi-agent analysis system. Runs Llama 3.2 (3.2B) locally via Ollama, using semantic chunking and cosine similarity for high-precision retrieval.',
       details: [
         'Semantic chunking (512-token segments)',
         'Local Llama 3.2 inference (<3s latency)',
@@ -725,9 +794,9 @@ const WorkSection = () => {
     {
       id: 'stock',
       number: '04',
-      title: 'Dynamic Stock Price Prediction',
-      subtitle: 'ML & Financial Analysis',
-      description: 'Real-time prediction system integrating live market data via yfinance. Achieved 92% accuracy and reduced MSE by 35% compared to baselines.',
+      title: 'NeuroStock – Financial Series Forecasting',
+      subtitle: 'Deep Learning',
+      description: 'Real-time prediction system integrating live market data via yfinance. Achieved 92% accuracy and reduced MSE by 35% using LSTM/Transformer hybrids.',
       details: [
         'Live market data via yfinance API',
         '35% reduction in MSE',
@@ -740,17 +809,32 @@ const WorkSection = () => {
     {
       id: 'fraud',
       number: '05',
-      title: 'Fraud Detection & Digital Onboarding',
-      subtitle: 'Computer Vision',
-      description: 'AI-based detection pipeline for preventing fraud in Banking Apps. Face matching and ID card small-object detection with optimized thresholds.',
+      title: 'Identity Verification & Fraud Prevention',
+      subtitle: 'Biometric Security',
+      description: 'Production-grade detection pipeline for Banking Apps. Implemented 1:1 Face Matching and ID card authenticity checks with optimized confidence thresholds.',
       details: [
         'Reduced false positives by 50%',
-        'Improved recall by 25%',
-        'Production deployment in financial workflows',
+        'Deployed to 100k+ users',
+        'Real-time liveness detection',
       ],
       metrics: { false_pos: '-50%', recall: '+25%', status: 'Prod' },
       tech: ['YOLOv8', 'FaceID', 'Deep Learning'],
       color: 'from-rose-500/10 to-transparent',
+    },
+    {
+      id: 'drone',
+      number: '06',
+      title: 'Aerial Object Recognition System',
+      subtitle: 'Defense Technology',
+      description: 'Developed high-altitude object detection pipelines for UAVs. Built hybrid anomaly detection systems combining deep learning with rule-based tracking for operational efficiency.',
+      details: [
+        'Small-object detection optimization',
+        'Hybrid Deep Learning/Rule-based engine',
+        'Video anomaly analysis',
+      ],
+      metrics: { acc: '98%', latency: '12ms', env: 'Air' },
+      tech: ['PyTorch', 'FFMPEG', 'YOLO'],
+      color: 'from-blue-500/10 to-transparent',
     },
   ];
 
@@ -799,47 +883,56 @@ const WorkSection = () => {
                     <p className="text-neutral-500 text-sm mt-1">{project.subtitle}</p>
                   </div>
 
-                  <div className="md:col-span-4 hidden md:flex gap-4">
+                  <div className="md:col-span-4 hidden md:flex items-center justify-center gap-5">
+                    {/* Metrics - Centered & Aligned */}
                     {Object.entries(project.metrics).map(([key, value]) => (
-                      <div key={key} className="text-center">
-                        <p className="text-neutral-300 text-sm font-medium">{value}</p>
+                      <div key={key} className="text-center w-20 group-hover:scale-105 transition-transform duration-300">
+                        <p className="text-amber-400 font-medium text-sm mb-0.5">{value}</p>
                         <p className="text-neutral-600 text-[10px] uppercase tracking-wider">{key}</p>
                       </div>
                     ))}
                   </div>
 
                   <div className="md:col-span-2 flex justify-end">
-                    <div className={`w-8 h-8 border border-neutral-700 flex items-center justify-center transition-all duration-300 ${expandedProject === project.id ? 'bg-amber-400 border-amber-400 rotate-45' : 'group-hover:border-neutral-500'
+                    {/* Enhanced Details Button */}
+                    <div className={`h-10 px-5 border border-neutral-800 rounded-sm flex items-center gap-3 transition-all duration-300 ${expandedProject === project.id ? 'bg-amber-500/10 border-amber-500/50 text-amber-500' : 'group-hover:border-neutral-600 text-neutral-500 group-hover:text-neutral-300'
                       }`}>
-                      <span className={`text-lg transition-colors ${expandedProject === project.id ? 'text-neutral-900' : 'text-neutral-500'}`}>+</span>
+                      <span className="text-[10px] font-medium tracking-[0.2em] uppercase">VIEW</span>
+                      <span className={`text-base transition-transform duration-300 ${expandedProject === project.id ? 'rotate-90' : 'group-hover:translate-x-1'}`}>→</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className={`overflow-hidden transition-all duration-500 ${expandedProject === project.id ? 'max-h-96' : 'max-h-0'}`}>
-                <div className="p-6 lg:p-8 border border-t-0 border-neutral-800 bg-neutral-900/30">
-                  <div className="grid md:grid-cols-12 gap-8">
-                    <div className="md:col-span-7">
-                      <p className="text-neutral-400 leading-relaxed mb-6">{project.description}</p>
+              <div className={`grid transition-all duration-500 ease-in-out ${expandedProject === project.id ? 'grid-rows-[1fr] opacity-100 mt-8 pt-8 border-t border-neutral-800' : 'grid-rows-[0fr] opacity-0 mt-0 pt-0 border-none'
+                }`}>
+                <div className="overflow-hidden">
+                  {/* Expanded Content with Metrics & Details */}
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h4 className="text-neutral-300 font-medium mb-4">Project Overview</h4>
+                      <p className="text-neutral-500 leading-relaxed mb-6">
+                        {project.description}
+                      </p>
+                      <div className="flex gap-6 mb-6">
+                        {Object.entries(project.metrics).map(([key, value]) => (
+                          <div key={key}>
+                            <p className="text-amber-400 font-bold">{value}</p>
+                            <p className="text-neutral-600 text-[10px] uppercase tracking-wider">{key}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-neutral-300 font-medium mb-4">Key Details</h4>
                       <ul className="space-y-2">
-                        {project.details.map((detail, idx) => (
-                          <li key={idx} className="flex items-start gap-3 text-sm text-neutral-500">
-                            <span className="text-amber-400 mt-1">→</span>
+                        {project.details.map((detail) => (
+                          <li key={detail} className="flex items-start gap-2 text-sm text-neutral-400">
+                            <span className="text-amber-400 mt-1.5">•</span>
                             {detail}
                           </li>
                         ))}
                       </ul>
-                    </div>
-                    <div className="md:col-span-5">
-                      <p className="text-[10px] text-neutral-600 uppercase tracking-widest mb-3">Technologies</p>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tech.map((t) => (
-                          <span key={t} className="px-3 py-1.5 bg-neutral-800 text-neutral-400 text-xs">
-                            {t}
-                          </span>
-                        ))}
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -851,6 +944,7 @@ const WorkSection = () => {
     </section>
   );
 };
+
 
 // ============================================
 // UNITED WE SECTION
@@ -895,6 +989,7 @@ const UnitedWeSection = () => {
 
   return (
     <section className="py-24 relative bg-neutral-900/40">
+      <div className="absolute top-0 left-6 lg:left-8 right-6 lg:right-8 h-px bg-neutral-800" />
       <div ref={ref} className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
 
@@ -1136,11 +1231,11 @@ export default function App() {
       <ScrollProgress />
       <Navigation />
       <HeroSection />
-      <BlogSection />
       <ExperienceSection />
       <WorkSection />
       <VentureSection />
       <UnitedWeSection />
+      <BlogSection />
       <ContactSection />
       <Footer />
     </div>
