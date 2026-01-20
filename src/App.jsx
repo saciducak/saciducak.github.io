@@ -45,7 +45,7 @@ const CursorFollower = () => {
     const handleHover = (e) => {
       const target = e.target;
       setIsHovering(
-        target.tagName === 'A' || 
+        target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
         target.closest('a') ||
         target.closest('button') ||
@@ -57,7 +57,7 @@ const CursorFollower = () => {
   }, []);
 
   return (
-    <div 
+    <div
       className="fixed pointer-events-none z-50 hidden lg:block transition-transform duration-150"
       style={{
         left: mouse.x - 4,
@@ -88,7 +88,7 @@ const ScrollProgress = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 h-px z-50">
-      <div 
+      <div
         className="h-full bg-amber-400 transition-all duration-150"
         style={{ width: `${progress}%` }}
       />
@@ -142,9 +142,8 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-4 py-2 text-sm transition-colors duration-300 ${
-                  activeSection === item.id ? 'text-neutral-100' : 'text-neutral-500 hover:text-neutral-300'
-                }`}
+                className={`relative px-4 py-2 text-sm transition-colors duration-300 ${activeSection === item.id ? 'text-neutral-100' : 'text-neutral-500 hover:text-neutral-300'
+                  }`}
               >
                 {item.label}
                 {activeSection === item.id && (
@@ -164,9 +163,9 @@ const Navigation = () => {
 
         <div className={`md:hidden overflow-hidden transition-all duration-500 ${menuOpen ? 'max-h-64 pb-6' : 'max-h-0'}`}>
           {navItems.map((item, i) => (
-            <button 
-              key={item.id} 
-              onClick={() => { scrollToSection(item.id); setMenuOpen(false); }} 
+            <button
+              key={item.id}
+              onClick={() => { scrollToSection(item.id); setMenuOpen(false); }}
               className="block w-full py-3 text-left text-neutral-400 hover:text-neutral-100 transition-colors"
               style={{ transitionDelay: `${i * 50}ms` }}
             >
@@ -189,31 +188,31 @@ const HeroSection = () => {
     'Computer vision meets LLM.',
     'Transforming data into decisions.',
   ];
-  
+
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
-  
+
   useEffect(() => {
     const currentPhrase = phrases[currentPhraseIndex];
-    
+
     const typeSpeed = isDeleting ? 30 : 80;
     const pauseTime = isDeleting ? 500 : 3000;
-    
+
     if (!isDeleting && displayText === currentPhrase) {
       // Pause before deleting
       const timeout = setTimeout(() => setIsDeleting(true), pauseTime);
       return () => clearTimeout(timeout);
     }
-    
+
     if (isDeleting && displayText === '') {
       // Move to next phrase
       setIsDeleting(false);
       setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
       return;
     }
-    
+
     const timeout = setTimeout(() => {
       if (isDeleting) {
         setDisplayText(currentPhrase.slice(0, displayText.length - 1));
@@ -221,10 +220,10 @@ const HeroSection = () => {
         setDisplayText(currentPhrase.slice(0, displayText.length + 1));
       }
     }, typeSpeed);
-    
+
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, currentPhraseIndex, phrases]);
-  
+
   useEffect(() => {
     const cursorInterval = setInterval(() => setShowCursor(prev => !prev), 530);
     return () => clearInterval(cursorInterval);
@@ -293,8 +292,8 @@ const HeroSection = () => {
 
             {/* Description */}
             <p className="text-lg text-neutral-400 max-w-xl leading-relaxed font-light mb-12">
-              AI Engineer crafting production systems—from YOLO-powered computer vision 
-              to multi-agent LLM architectures. Turning applied research into real-world impact.
+              As an AI Engineer, I've worked on end-to-end AI systems in computer vision and applying deep learning solutions.
+              From data preparation to deployment-ready architectures, building complete AI pipelines that turn research into real-world impact.
             </p>
 
             {/* CTA */}
@@ -375,27 +374,33 @@ const VentureSection = () => {
               <p className="text-amber-400 text-xs tracking-[0.3em] uppercase">Venture</p>
               <div className="flex-1 h-px bg-neutral-800" />
             </div>
-            
+
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-neutral-100 mb-4">
               Shetland Tech
             </h2>
             <p className="text-neutral-500 text-lg mb-8">
               Marmara University Incubation Graduate • Active Investment Stage
             </p>
-            
-            <p className="text-neutral-400 leading-relaxed mb-10 max-w-xl">
-              Building the future of agriculture through AI. Our FlorGarden platform 
-              combines computer vision diagnostics with LLM-powered decision support, 
-              helping farmers make data-driven decisions at every growth stage.
-            </p>
+
+            <div className="space-y-6 text-neutral-400 leading-relaxed mb-10">
+              <p>
+                Leading AI-driven product development focused on <span className="text-neutral-200">Smart Soilless Agriculture</span>.
+                Our flagship FlorGarden platform combines advanced computer vision for plant disease detection
+                with <span className="text-neutral-200">LLM-powered decision support</span> mechanisms.
+              </p>
+              <p>
+                We are actively analyzing product-market fit, planning the technical roadmap, and driving early-stage growth
+                to transform how farmers interact with their crops using intelligent systems.
+              </p>
+            </div>
 
             {/* Feature Cards */}
             <div className="grid sm:grid-cols-2 gap-4 mb-10">
               {[
-                { icon: '◈', title: 'Disease Detection', desc: 'YOLO-based early diagnosis' },
-                { icon: '◇', title: 'Farmer AI Assistant', desc: 'LLM treatment guidance' },
-                { icon: '○', title: 'Real-time Monitoring', desc: 'Crop health dashboards' },
-                { icon: '□', title: 'Business Intelligence', desc: 'TÜBİTAK BİGG aligned' },
+                { icon: '◈', title: 'StartUp Ecosystem', desc: 'Incubation Graduate' },
+                { icon: '◇', title: 'AI-First Approach', desc: 'Vision + LLM Pipeline' },
+                { icon: '○', title: 'Board Overview', desc: 'Strategy & Growth' },
+                { icon: '□', title: 'Investment Ready', desc: 'TÜBİTAK BİGG Aligned' },
               ].map((feature) => (
                 <div key={feature.title} className="group p-4 border border-neutral-800 hover:border-neutral-700 transition-colors">
                   <span className="text-amber-400/60 text-lg">{feature.icon}</span>
@@ -421,7 +426,7 @@ const VentureSection = () => {
             <div className="relative aspect-[3/4] flex items-center justify-center">
               <div className="absolute inset-8 border border-neutral-800" />
               <div className="absolute inset-4 border border-amber-400/20" />
-              
+
               <div className="relative z-10 text-center px-8">
                 <div className="w-24 h-24 mx-auto mb-6 relative">
                   <div className="absolute inset-0 border border-amber-400/30 animate-spin-slow" style={{ animationDuration: '20s' }} />
@@ -455,24 +460,24 @@ const BlogSection = () => {
 
   const articles = [
     {
-      title: 'DevDay in OpenAI: The Earthquake that Shook the Automation World',
-      date: 'Jun 2025',
-      read: '8 min',
-      description: 'How DevDay became a turning point for Automation startups.',
+      title: 'Impacts of DeepseekR1: The New Era',
+      date: 'Jan 2026',
+      read: '6 min',
+      description: 'Analysis of DeepSeek\'s impact on the market and its robust reasoning capabilities.',
       tag: 'Analysis',
     },
     {
-      title: 'AI Wars #2: Game of Thrones',
-      date: 'Feb 2025',
-      read: '6 min',
-      description: 'OpenAI\'s response to o3-mini. DeepSeek\'s market impact.',
+      title: 'DevDay in OpenAI: A Turbulence of World',
+      date: 'Nov 2025',
+      read: '8 min',
+      description: 'How DevDay became a turning point for Automation startups.',
       tag: 'Industry',
     },
     {
-      title: 'AI Wars #1: DeepSeek R1 Phenomenon',
-      date: 'Jan 2025',
-      read: '7 min',
-      description: 'China\'s DeepSeek R1—10x faster, rose to #2 in AppStore.',
+      title: 'Comparison of YOLO DL Models in Plant Disease Detection',
+      date: 'Jun 2024',
+      read: 'Thesis',
+      description: 'B.Sc. Graduation Thesis on soil farming systems and computer vision.',
       tag: 'Research',
     },
   ];
@@ -480,7 +485,7 @@ const BlogSection = () => {
   return (
     <section id="blog" className="py-32 relative">
       <div className="absolute top-0 left-6 lg:left-8 right-6 lg:right-8 h-px bg-neutral-800" />
-      
+
       <div ref={ref} className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className={`flex items-end justify-between mb-16 transition-all duration-1000 ${isInView ? 'opacity-100' : 'opacity-0 translate-y-8'}`}>
@@ -508,9 +513,8 @@ const BlogSection = () => {
               href="https://medium.com/@saciducak1"
               target="_blank"
               rel="noopener noreferrer"
-              className={`hoverable group block p-6 border border-neutral-800 hover:border-amber-400/30 transition-all duration-500 ${
-                isInView ? 'opacity-100' : 'opacity-0 translate-y-8'
-              }`}
+              className={`hoverable group block p-6 border border-neutral-800 hover:border-amber-400/30 transition-all duration-500 ${isInView ? 'opacity-100' : 'opacity-0 translate-y-8'
+                }`}
               style={{ transitionDelay: `${200 + i * 100}ms` }}
             >
               <div className="flex items-center justify-between mb-4">
@@ -549,40 +553,40 @@ const ExperienceSection = () => {
   const experiences = [
     {
       id: 'shetland',
-      period: '2025 —',
+      period: '04/2025 — Present',
       role: 'AI Engineer & Co-Founder',
       company: 'Shetland Tech',
       type: 'Venture',
-      description: 'Leading AI products for smart agriculture. Computer vision disease detection combined with LLM-powered decision support.',
-      highlights: ['Plant disease detection', 'Farmer AI assistant', 'End-to-end platform'],
+      description: 'Leading AI-driven product development focused on Smart Soilless Agriculture and applied computer vision plant disease detection systems. Combining image-based disease diagnosis with LLM-powered farmer assistance and decision-support mechanisms.',
+      highlights: ['Product-market fit', 'Roadmap planning', 'Early-stage growth'],
       current: true,
     },
     {
-      id: 'baykar',
-      period: '2024 — 2025',
-      role: 'AI Engineer',
-      company: 'Baykar Technologies',
-      type: 'Defense',
-      description: 'Video object detection pipelines for UAV systems. Small-object detection solutions with rule-based and deep learning approaches.',
-      highlights: ['UAV data annotation', 'Tracker models', 'mAP optimization'],
+      id: 'ejder',
+      period: '08/2025 — 01/2026',
+      role: 'Artificial Intelligence Engineer',
+      company: 'Ejder Turizm',
+      type: 'Full-time',
+      description: 'Developed Applied AI software system to support Company\'s Finance, CRM, sales, and organizational workflows on ZOHO Platform. Identified manual process bottlenecks and introduced targeted automation solutions.',
+      highlights: ['ZOHO Platform', 'Automation solutions', 'Workflow optimization'],
     },
     {
-      id: 'ejder',
-      period: '2024 — 2025',
-      role: 'AI Engineer',
-      company: 'Ejder Turizm',
-      type: 'Enterprise',
-      description: 'Company-wide tooling for Finance, CRM, and operations. Process automation and decision-support systems.',
-      highlights: ['Workflow automation', 'CRM tools', 'Reporting systems'],
+      id: 'baykar',
+      period: '09/2024 — 01/2025',
+      role: 'Artificial Intelligence Engineer',
+      company: 'BAYKAR Technologies',
+      type: 'Defense',
+      description: 'Developed computer vision pipelines for video-based object detection, anomaly detection, and small-object detection on real operational data. Designed hybrid systems combining deep learning models with rule-based algorithms.',
+      highlights: ['Video pipelines', 'Hybrid systems', 'FFMPEG workflows'],
     },
     {
       id: 'intertech',
-      period: '2022 — 2023',
-      role: 'AI Engineer Intern',
+      period: '08/2023 — 09/2023',
+      role: 'AI Engineer & Front-End Intern',
       company: 'Intertech',
       type: 'Fintech',
-      description: 'Deep learning pipelines for face recognition and ID extraction. YOLOv8-10 fine-tuning achieving 97%+ accuracy.',
-      highlights: ['Face recognition', 'ID extraction', '97% accuracy'],
+      description: 'Trained and fine-tuned object detection models (YOLO-based) achieving 97%+ accuracy and deep learning pipelines for face recognition. Collaborated with frontend, backend, and QA teams within Agile/Scrum processes.',
+      highlights: ['YOLO-based models', 'Face recognition', 'End-to-end AI'],
     },
   ];
 
@@ -618,11 +622,11 @@ const ExperienceSection = () => {
                       {exp.current && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />}
                       {i % 2 === 0 && <span className={`px-2 py-0.5 text-[10px] uppercase tracking-wider border ${exp.current ? 'border-amber-400/50 text-amber-400' : 'border-neutral-700 text-neutral-500'}`}>{exp.type}</span>}
                     </div>
-                    
+
                     <h3 className="text-xl lg:text-2xl text-neutral-100 font-medium mb-1">{exp.role}</h3>
                     <p className="text-amber-400/80 mb-3">{exp.company}</p>
                     <p className="text-neutral-500 text-sm leading-relaxed mb-4">{exp.description}</p>
-                    
+
                     <div className={`flex flex-wrap gap-2 ${i % 2 === 0 ? 'md:justify-end' : ''}`}>
                       {exp.highlights.map((h) => (
                         <span key={h} className="px-2 py-1 bg-neutral-800/50 text-neutral-500 text-xs">
@@ -635,9 +639,8 @@ const ExperienceSection = () => {
                 {i % 2 === 0 && <div className="hidden md:block" />}
               </div>
 
-              <div className={`absolute left-0 md:left-1/2 top-1 w-3 h-3 -translate-x-1/2 transition-all duration-300 ${
-                hoveredExp === exp.id || exp.current ? 'bg-amber-400 scale-125' : 'bg-neutral-700'
-              }`} style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }} />
+              <div className={`absolute left-0 md:left-1/2 top-1 w-3 h-3 -translate-x-1/2 transition-all duration-300 ${hoveredExp === exp.id || exp.current ? 'bg-amber-400 scale-125' : 'bg-neutral-700'
+                }`} style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }} />
             </div>
           ))}
         </div>
@@ -647,12 +650,16 @@ const ExperienceSection = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-[10px] text-neutral-600 uppercase tracking-widest mb-2">Education</p>
-              <h3 className="text-xl text-neutral-200">B.Sc. Computer Engineering</h3>
-              <p className="text-neutral-500">Marmara University • 2020 — 2025</p>
+              <h3 className="text-xl text-neutral-200">B.Sc. in Computer Engineering</h3>
+              <p className="text-neutral-500">Marmara University • 09/2020 — 01/2025</p>
+              <p className="text-neutral-500 text-sm mt-1">GPA: 2.7 / 4.0</p>
             </div>
             <div className="md:text-right">
               <p className="text-neutral-500 text-sm">
-                Thesis: Comparison of YOLO Models in Plant Disease Detection
+                Participated in LÖSEV student club, AI, Blockchain and Debate Club.
+              </p>
+              <p className="text-neutral-600 text-xs mt-1">
+                Also: Albukhary International University (IELTS Academic Program) • 06/2017 - 08/2017
               </p>
             </div>
           </div>
@@ -673,84 +680,84 @@ const WorkSection = () => {
     {
       id: 'plant',
       number: '01',
-      title: 'Plant Disease Detection System',
-      subtitle: 'Computer Vision',
-      description: 'Production-ready YOLO-based detection achieving 0.92 mAP. Automated analysis with treatment recommendations, reducing manual inspection by 70%.',
+      title: 'FlorGarden – Smart Soilless Agriculture Platform',
+      subtitle: 'Computer Vision & AI Assistant',
+      description: 'Developed an AI-driven plant disease detection system with operationally usable accuracy. Combined YOLO-based detection with an LLM-powered AI Assistant for farmers.',
       details: [
-        'Fine-tuned YOLOv8/v9 models with custom augmentation',
-        'Integrated LLM layer for diagnosis interpretation',
-        'Real-time inference with monitoring dashboards',
+        'Automated analysis and decision-support workflows',
+        'Robustness under varying image quality',
+        'Reduced manual inspection effort by ~70%',
       ],
-      metrics: { mAP: '0.92', f1: '+12%', efficiency: '-70%' },
-      tech: ['YOLO', 'Python', 'Deep Learning', 'LLM'],
+      metrics: { mAP: '0.94', f1: '+12%', efficiency: '-70%' },
+      tech: ['YOLOv9', 'Python', 'LLM', 'RAG'],
       color: 'from-emerald-500/10 to-transparent',
     },
     {
       id: 'agents',
       number: '02',
-      title: 'Multi-Agent Decision System',
-      subtitle: 'LLM Architecture',
-      description: 'Task-based LLM orchestration with CrewAI-style coordination. Document analysis, summarization, and action recommendations with RAG retrieval.',
+      title: 'Document Analysis & Decision Support',
+      subtitle: 'LLM + RAG Architecture',
+      description: 'Built a RAG-based multi-agent document analysis system. Runs Llama 3.2 (3.2B) locally via Ollama, using semantic chunking and cosine similarity for retrieval.',
       details: [
-        'Agent behaviors with task breakdown and state handling',
-        'Tool-triggered actions via Python control logic',
-        'Lightweight retrieval over internal knowledge bases',
+        'Semantic chunking (512-token segments)',
+        'Local Llama 3.2 inference (<3s latency)',
+        'Efficient semantic retrieval with ChromaDB',
       ],
-      metrics: { agents: 'Multi', pipeline: 'RAG', tools: 'Yes' },
-      tech: ['LLM', 'CrewAI', 'Python', 'RAG'],
+      metrics: { latency: '<3s', chunk: '512t', model: 'Llama3.2' },
+      tech: ['LLM', 'ChromaDB', 'Ollama', 'RAG'],
       color: 'from-violet-500/10 to-transparent',
     },
     {
       id: 'proline',
       number: '03',
-      title: 'ProLine Workforce Platform',
-      subtitle: 'Full-Stack SaaS',
-      description: 'Real-time personnel management with Firebase. Live tracking, approval workflows, and automated reporting—SaaS-ready for cross-industry deployment.',
+      title: 'ProLine – Workforce Management',
+      subtitle: 'SaaS Platform',
+      description: 'Real-time workforce management platform using React.js and Firebase. Includes Role-Based Access Control (RBAC) and automated operational reporting.',
       details: [
-        'Real-time check-in/out and break tracking',
-        'Approval workflows with automated notifications',
-        'Export to Excel/PDF for HR reporting',
+        'Real-time tracking and approval workflows',
+        'Automated reporting for HR/Management',
+        'Scalable event-driven UI',
       ],
-      metrics: { type: 'Real-Time', scale: 'SaaS', scope: 'Enterprise' },
-      tech: ['React', 'Firebase', 'TypeScript'],
+      metrics: { type: 'SaaS', users: 'Ent.', status: 'RBAC' },
+      tech: ['React', 'Firebase', 'RBAC'],
       color: 'from-amber-500/10 to-transparent',
     },
     {
-      id: 'fraud',
-      number: '04',
-      title: 'Fraud Detection & Onboarding',
-      subtitle: 'Identity Verification',
-      description: 'AI-based verification for digital onboarding. ID-card face matching with optimized small-object detection on high-resolution documents.',
-      details: [
-        'Reduced false positives by 50%',
-        'Improved recall by 25% on edge cases',
-        'Production deployment in financial workflows',
-      ],
-      metrics: { fps: '-50%', recall: '+25%', status: 'Prod' },
-      tech: ['YOLOv8', 'Face Recognition', 'Deep Learning'],
-      color: 'from-rose-500/10 to-transparent',
-    },
-    {
       id: 'stock',
-      number: '05',
-      title: 'Stock Price Prediction',
-      subtitle: 'ML Finance',
-      description: 'Real-time prediction integrating yfinance API with deep learning. 92% directional accuracy with FinBERT sentiment analysis in development.',
+      number: '04',
+      title: 'Dynamic Stock Price Prediction',
+      subtitle: 'ML & Financial Analysis',
+      description: 'Real-time prediction system integrating live market data via yfinance. Achieved 92% accuracy and reduced MSE by 35% compared to baselines.',
       details: [
-        'Live market data integration via yfinance',
-        'Reduced MSE by 35% vs baseline models',
-        'Sentiment layer with financial news streams',
+        'Live market data via yfinance API',
+        '35% reduction in MSE',
+        'Planned FinBERT sentiment analysis',
       ],
       metrics: { accuracy: '92%', mse: '-35%', nlp: 'FinBERT' },
-      tech: ['Deep Learning', 'yfinance', 'NLP'],
+      tech: ['Deep Learning', 'yfinance', 'Python'],
       color: 'from-cyan-500/10 to-transparent',
+    },
+    {
+      id: 'fraud',
+      number: '05',
+      title: 'Fraud Detection & Digital Onboarding',
+      subtitle: 'Computer Vision',
+      description: 'AI-based detection pipeline for preventing fraud in Banking Apps. Face matching and ID card small-object detection with optimized thresholds.',
+      details: [
+        'Reduced false positives by 50%',
+        'Improved recall by 25%',
+        'Production deployment in financial workflows',
+      ],
+      metrics: { false_pos: '-50%', recall: '+25%', status: 'Prod' },
+      tech: ['YOLOv8', 'FaceID', 'Deep Learning'],
+      color: 'from-rose-500/10 to-transparent',
     },
   ];
 
   return (
     <section id="work" className="py-32 relative">
       <div className="absolute top-0 left-6 lg:left-8 right-6 lg:right-8 h-px bg-neutral-800" />
-      
+
       <div ref={ref} className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className={`flex items-end justify-between mb-16 transition-all duration-1000 ${isInView ? 'opacity-100' : 'opacity-0 translate-y-8'}`}>
@@ -773,14 +780,13 @@ const WorkSection = () => {
               className={`group relative transition-all duration-700 ${isInView ? 'opacity-100' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: `${200 + i * 100}ms` }}
             >
-              <div 
-                className={`hoverable relative p-6 lg:p-8 border border-neutral-800 cursor-pointer transition-all duration-500 ${
-                  expandedProject === project.id ? 'bg-neutral-900/50 border-neutral-700' : 'hover:border-neutral-700 hover:bg-neutral-900/30'
-                }`}
+              <div
+                className={`hoverable relative p-6 lg:p-8 border border-neutral-800 cursor-pointer transition-all duration-500 ${expandedProject === project.id ? 'bg-neutral-900/50 border-neutral-700' : 'hover:border-neutral-700 hover:bg-neutral-900/30'
+                  }`}
                 onClick={() => setExpandedProject(expandedProject === project.id ? null : project.id)}
               >
                 <div className={`absolute inset-0 bg-gradient-to-r ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
-                
+
                 <div className="relative grid md:grid-cols-12 gap-6 items-center">
                   <div className="md:col-span-1">
                     <span className="text-neutral-700 font-mono text-sm">{project.number}</span>
@@ -803,9 +809,8 @@ const WorkSection = () => {
                   </div>
 
                   <div className="md:col-span-2 flex justify-end">
-                    <div className={`w-8 h-8 border border-neutral-700 flex items-center justify-center transition-all duration-300 ${
-                      expandedProject === project.id ? 'bg-amber-400 border-amber-400 rotate-45' : 'group-hover:border-neutral-500'
-                    }`}>
+                    <div className={`w-8 h-8 border border-neutral-700 flex items-center justify-center transition-all duration-300 ${expandedProject === project.id ? 'bg-amber-400 border-amber-400 rotate-45' : 'group-hover:border-neutral-500'
+                      }`}>
                       <span className={`text-lg transition-colors ${expandedProject === project.id ? 'text-neutral-900' : 'text-neutral-500'}`}>+</span>
                     </div>
                   </div>
@@ -853,30 +858,127 @@ const WorkSection = () => {
 const UnitedWeSection = () => {
   const [ref, isInView] = useInView();
 
+  // Terminal Logic
+  const words = ['RISE', 'LEARN', 'CODE', 'BUILD'];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [cursorVisible, setCursorVisible] = useState(true);
+
+  useEffect(() => {
+    const currentWord = words[currentWordIndex];
+    const typeSpeed = isDeleting ? 50 : 150;
+    const pauseTime = isDeleting ? 300 : 3000;
+
+    if (!isDeleting && displayText === currentWord) {
+      const timeout = setTimeout(() => setIsDeleting(true), pauseTime);
+      return () => clearTimeout(timeout);
+    }
+
+    if (isDeleting && displayText === '') {
+      setIsDeleting(false);
+      setCurrentWordIndex((prev) => (prev + 1) % words.length);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setDisplayText(currentWord.slice(0, displayText.length + (isDeleting ? -1 : 1)));
+    }, typeSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, currentWordIndex]);
+
+  useEffect(() => {
+    const interval = setInterval(() => setCursorVisible(v => !v), 500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="py-24 relative bg-neutral-900/40">
       <div ref={ref} className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className={`max-w-2xl transition-all duration-1000 ${isInView ? 'opacity-100' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-neutral-600 text-xs tracking-[0.3em] uppercase mb-4">Philosophy</p>
-          <h2 className="text-3xl sm:text-4xl font-light text-neutral-200 mb-6">
-            United We<span className="text-amber-400">.</span>
-          </h2>
-          <p className="text-neutral-400 leading-relaxed mb-8">
-            An ecosystem built on collective growth—learning, coding, and developing together. 
-            The belief that shared knowledge accelerates everyone's progress.
-          </p>
-          <div className="flex gap-12">
-            {[
-              { word: 'Learn', sub: 'Continuous' },
-              { word: 'Code', sub: 'Together' },
-              { word: 'Develop', sub: 'Collectively' },
-            ].map((item) => (
-              <div key={item.word} className="group">
-                <p className="text-neutral-300 font-medium group-hover:text-amber-400 transition-colors">{item.word}</p>
-                <p className="text-neutral-600 text-sm">{item.sub}</p>
-              </div>
-            ))}
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+
+          {/* Content */}
+          <div className={`lg:col-span-2 transition-all duration-1000 ${isInView ? 'opacity-100' : 'opacity-0 translate-y-8'}`}>
+            <p className="text-neutral-600 text-xs tracking-[0.3em] uppercase mb-4">Philosophy</p>
+            <h2 className="text-3xl sm:text-4xl font-light text-neutral-200 mb-6">
+              United We<span className="text-amber-400">.</span>
+            </h2>
+            <p className="text-neutral-400 leading-relaxed mb-8 text-lg">
+              where ideas turn into products and people into a community! That's my developed community! Let's share and build! <a href="https://unitedwe.co" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline underline-offset-4 decoration-amber-400/30 hover:decoration-amber-400 transition-all font-mono">unitedwe.co</a>
+            </p>
+            <div className="flex gap-12">
+              {[
+                { word: 'Learn', sub: 'Continuous' },
+                { word: 'Code', sub: 'Together' },
+                { word: 'Develop', sub: 'Collectively' },
+              ].map((item) => (
+                <div key={item.word} className="group">
+                  <p className="text-neutral-300 font-medium group-hover:text-amber-400 transition-colors">{item.word}</p>
+                  <p className="text-neutral-600 text-sm">{item.sub}</p>
+                </div>
+              ))}
+            </div>
           </div>
+
+          {/* Terminal Visual */}
+          <div className={`lg:col-span-3 transition-all duration-1000 delay-200 ${isInView ? 'opacity-100' : 'opacity-0 translate-x-8'}`}>
+            <div className="w-full rounded-lg overflow-hidden bg-black border border-neutral-800 shadow-2xl font-mono text-sm relative group">
+              {/* Gloss */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+
+              {/* Terminal Header */}
+              <div className="bg-[#1a1a1a] px-4 py-3 flex items-center justify-between border-b border-neutral-800">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f56] hover:bg-[#ff5f56]/80 transition-colors" />
+                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e] hover:bg-[#ffbd2e]/80 transition-colors" />
+                  <div className="w-3 h-3 rounded-full bg-[#27c93f] hover:bg-[#27c93f]/80 transition-colors" />
+                </div>
+                <div className="text-xs text-neutral-500 font-medium opacity-50">sacid@macbook-pro: ~/united-we</div>
+                <div className="w-10" />
+              </div>
+
+              {/* Terminal Body */}
+              <div className="p-6 space-y-4 min-h-[280px] text-neutral-300 font-mono text-xs sm:text-sm">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-emerald-500">➜</span>
+                    <span className="text-blue-400 font-bold">~</span>
+                    <span className="text-neutral-500">$</span>
+                    <span className="text-neutral-100">init_community.sh --mode=active</span>
+                  </div>
+                  <div className="mt-2 text-neutral-400">
+                    Initializing United We Protocol...<br />
+                    Loading modules: [Knowledge, Growth, Network]<br />
+                    <span className="text-green-500">✓ Modules loaded successfully.</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-emerald-500">➜</span>
+                    <span className="text-blue-400 font-bold">~/united-we</span>
+                    <span className="text-neutral-500">$</span>
+                    <span className="text-neutral-100">echo $MISSION_STATEMENT</span>
+                  </div>
+                  <div className="mt-2 pl-4 border-l-2 border-amber-500/30 text-amber-400 font-bold tracking-wider text-lg">
+                    {displayText}<span className={`${cursorVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>_</span>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-neutral-800/50 mt-4">
+                  <div className="text-neutral-400 mb-2 flex items-center gap-2 animate-pulse">
+                    <span className="text-blue-400">→</span>
+                    <span className="font-bold text-neutral-200">CODE • CONNECT • CONQUER</span>
+                  </div>
+                  <div className="text-neutral-500 italic text-[11px] sm:text-xs opacity-70">
+                    "For those who think together and build together!"
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -899,7 +1001,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-32 relative">
       <div className="absolute top-0 left-6 lg:left-8 right-6 lg:right-8 h-px bg-neutral-800" />
-      
+
       <div ref={ref} className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16">
           <div className={`transition-all duration-1000 ${isInView ? 'opacity-100' : 'opacity-0 -translate-x-8'}`}>
@@ -908,7 +1010,7 @@ const ContactSection = () => {
               Let's build<br />something.
             </h2>
             <p className="text-neutral-400 leading-relaxed max-w-md">
-              Open to AI projects, collaborations, and interesting challenges. 
+              Open to AI projects, collaborations, and interesting challenges.
               Based in Istanbul, working globally.
             </p>
           </div>
@@ -1034,10 +1136,10 @@ export default function App() {
       <ScrollProgress />
       <Navigation />
       <HeroSection />
-      <VentureSection />
       <BlogSection />
       <ExperienceSection />
       <WorkSection />
+      <VentureSection />
       <UnitedWeSection />
       <ContactSection />
       <Footer />
