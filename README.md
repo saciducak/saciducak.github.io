@@ -21,8 +21,6 @@ I believe in tools that get out of the way. This site is crafted with:
 
 ## 🌿 Philosophy
 
-> "We don't just build code; we cultivate ecosystems."
-
 Whether it's optimizing a YOLO model for plant disease detection or designing a scalable LLM pipeline, my focus is always on **precision** and **impact**. This site reflects that—no clutter, just signal.
 
 ---
